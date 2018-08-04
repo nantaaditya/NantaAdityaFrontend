@@ -1,65 +1,54 @@
-<template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        nanta-aditya-ui
-      </h1>
-      <h2 class="subtitle">
-        Nanta Aditya's website
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+<template>      
+    <div class="content-wrapper">
+      <div class="conteiner fill">
+        <!--CAROUSEL-->
+        <Carousel></Carousel>
+        <hr class="line" />
+        <!--PROFILE-->
+        <Profile></Profile>
+        <!--DIVIDER-->
+        <Divider></Divider>
+        <!--SKILL-->
+        <CurriculumVitae></CurriculumVitae>
       </div>
-    </div>
-  </section>
+    </div>  
 </template>
 
-<script>
-import AppLogo from '~/components/AppLogo.vue'
+<script>  
+  import Carousel from '~/components/Home/Carousel.vue';
+  import CurriculumVitae from '~/components/Home/CurriculumVitae.vue';
+  import Divider from '~/components/Home/Divider.vue';  
+  import Profile from '~/components/Home/Profile.vue';
 
-export default {
-  components: {
-    AppLogo
-  }
-}
+  export default {    
+    layout: 'Home',
+    head:{
+      link: [
+        { rel: 'stylesheet', href:'/css/main.css'},       
+      ]
+    },
+    components:{
+      Carousel,
+      CurriculumVitae,
+      Divider,
+      Profile
+    }
+  }    
 </script>
-
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+hr.line {
+  border-top: 4px double #3c8dbc;
   text-align: center;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+hr.line:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0);
+  color: #3c8dbc;
+  font-size: 18px;
 }
 </style>
-
