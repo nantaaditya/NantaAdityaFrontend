@@ -4,15 +4,19 @@
 
 <script>
 export default {
-  data: () => ({
-    loading: false
-  }),
+  data(){
+    return{
+      loading: false
+    }
+  },
   methods: {
     start () {
       this.loading = true
     },
     finish () {
-      this.loading = false
+      setTimeout(() => {
+        this.loading = false
+      }, 3000)
     }
   }
 }
