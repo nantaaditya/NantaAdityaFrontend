@@ -1,6 +1,6 @@
 <template>      
     <div class="content-wrapper">
-      <div class="conteiner fill">
+      <div class="container fill">
         <!--CAROUSEL-->
         <Carousel></Carousel>
         <hr class="line" />
@@ -8,8 +8,14 @@
         <Profile></Profile>
         <!--DIVIDER-->
         <Divider></Divider>
-        <!--SKILL-->
+        <!--CURRICULUM VITAE-->
         <CurriculumVitae></CurriculumVitae>
+        <!--DIVIDER-->
+        <Divider></Divider>
+        <!--SKILL-->
+        <Skill></Skill>
+        <!--DIVIDER-->
+        <Divider></Divider>
       </div>
     </div>  
 </template>
@@ -19,6 +25,7 @@
   import CurriculumVitae from '~/components/Home/CurriculumVitae.vue';
   import Divider from '~/components/Home/Divider.vue';  
   import Profile from '~/components/Home/Profile.vue';
+  import Skill from '~/components/Home/Skill.vue';
 
   export default {    
     layout: 'Home',
@@ -31,7 +38,8 @@
       Carousel,
       CurriculumVitae,
       Divider,
-      Profile
+      Profile,
+      Skill
     }
   }    
 </script>
