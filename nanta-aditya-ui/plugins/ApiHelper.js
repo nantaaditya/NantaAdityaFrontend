@@ -14,9 +14,21 @@ const base = axios.create({
   }
 });
 
+
 const get = async function (url) {
   console.log(url);
   return await base.get(url).then(response => {
+    return response.data;
+  }).catch(error => {
+    console.log(error.response.data);
+  });
+};
+
+const getBlog = async function (url, c) {
+  console.log(url);
+  return await base.get(url, {params:{
+    client: c
+  }}).then(response => {
     return response.data;
   }).catch(error => {
     console.log(error.response.data);
@@ -35,4 +47,4 @@ const post = function (url, request){
   });
 };
 
-export {get, post};
+export {get, getBlog, post};
