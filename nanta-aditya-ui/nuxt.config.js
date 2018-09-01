@@ -84,7 +84,9 @@ module.exports = {
     { src: '~plugins/GoogleAnalytics.js', ssr: false },
     { src: '~plugins/AosHelper.js', ssr: false },
     { src: '~plugins/VueTimer.js', ssr: false },
-    { src: '~/plugins/VueNotification.js' }
+    { src: '~/plugins/VueNotification.js' },
+    { src: '~/plugins/ImageLazyLoad.js' },
+    { src: '~/plugins/SocialSharing.js'}    
   ],
   router: {
     base: '/'
