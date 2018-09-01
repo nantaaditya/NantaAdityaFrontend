@@ -16,6 +16,8 @@
         <Skill></Skill>
         <!--DIVIDER-->
         <Divider></Divider>
+        <!--PROJECT-->
+        <Project></Project>
       </div>
     </div>  
 </template>
@@ -26,6 +28,7 @@
   import Divider from '~/components/Home/Divider.vue';  
   import Profile from '~/components/Home/Profile.vue';
   import Skill from '~/components/Home/Skill.vue';
+  import Project from '~/components/Home/Project.vue';
 
   export default {    
     layout: 'Home',
@@ -39,7 +42,8 @@
       CurriculumVitae,
       Divider,
       Profile,
-      Skill
+      Skill,
+      Project
     }
   }    
 </script>
