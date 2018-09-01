@@ -120,9 +120,16 @@ ul.no-style li {
 
 .section-box-eleven{
         height: 250px;
-        background: radial-gradient(#6e6e6e,#2f2f2f);
-        background: -webkit-radial-gradient(#6e6e6e,#2f2f2f);
-        background: -moz-radial-gradient(#6e6e6e,#2f2f2f);
+        background: -moz-linear-gradient(89deg, rgba(255,255,255,0.1) 0%, rgba(3,169,244,0.14) 15%, rgba(3,169,244,0.4) 100%); /* ff3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(3,169,244,0.4)), color-stop(85%, rgba(3,169,244,0.14)), color-stop(100%, rgba(255,255,255,0.1))); /* safari4+,chrome */
+        background: -webkit-linear-gradient(89deg, rgba(255,255,255,0.1) 0%, rgba(3,169,244,0.14) 15%, rgba(3,169,244,0.4) 100%); /* safari5.1+,chrome10+ */
+        background: -o-linear-gradient(89deg, rgba(255,255,255,0.1) 0%, rgba(3,169,244,0.14) 15%, rgba(3,169,244,0.4) 100%); /* opera 11.10+ */
+        background: -ms-linear-gradient(89deg, rgba(255,255,255,0.1) 0%, rgba(3,169,244,0.14) 15%, rgba(3,169,244,0.4) 100%); /* ie10+ */
+        background: linear-gradient(1deg, rgba(255,255,255,0.1) 0%, rgba(3,169,244,0.14) 15%, rgba(3,169,244,0.4) 100%); /* w3c */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03A9F4', endColorstr='#ffffff',GradientType=0 ); /* ie6-9 */
+        border-style: solid;
+        border-width: 0px 0px 10px 0px ;
+        border-color: #fff;
         color: #fff;
         position: relative;
         overflow:hidden;
@@ -340,7 +347,7 @@ ul.no-style li {
     }
 
     .card.hovercard .cardheader {
-        background: url(/resource/web/blog-background.png);
+        background: url(/blog-bg.jpg);
         background-size: cover;
         height: 135px;
     }
