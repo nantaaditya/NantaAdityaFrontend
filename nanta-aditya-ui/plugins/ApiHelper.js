@@ -24,14 +24,14 @@ const get = function (url) {
   });
 };
 
-const getBlog = async function (url, c) {
+const getBlog = function (url, c) {
   console.log(url);
-  return await base.get(url, {params:{
+  return base.get(url, {params:{
     client: c
   }}).then(response => {
     return response.data;
   }).catch(error => {
-    console.log(error.response.data);
+    return error.response.data;
   });
 };
 
