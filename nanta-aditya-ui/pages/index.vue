@@ -5,19 +5,19 @@
         <Carousel></Carousel>
         <hr class="line" />
         <!--PROFILE-->
-        <Profile></Profile>
+        <Profile :value="about"></Profile>
         <!--DIVIDER-->
         <Divider></Divider>
         <!--CURRICULUM VITAE-->
-        <CurriculumVitae></CurriculumVitae>
+        <CurriculumVitae :value="curriculum"></CurriculumVitae>
         <!--DIVIDER-->
         <Divider></Divider>
         <!--SKILL-->
-        <Skill></Skill>
+        <Skill :value="skills"></Skill>
         <!--DIVIDER-->
         <Divider></Divider>
         <!--PROJECT-->
-        <Project></Project>
+        <Project :value="projects"></Project>
       </div>
     </div>  
 </template>
@@ -29,6 +29,8 @@
   import Profile from '~/components/Home/Profile.vue';
   import Skill from '~/components/Home/Skill.vue';
   import Project from '~/components/Home/Project.vue';
+  import axios from 'axios';
+  import {get} from '~/plugins/ApiHelper.js';
 
   export default {    
     layout: 'Home',
@@ -44,6 +46,18 @@
       Profile,
       Skill,
       Project
+    },
+    async asyncData(){
+      let aboutData = await get('/api/about-me');    
+      let curriculumVitaeData = await get('/api/curriculum-vitae');
+      let skillsData = await get('/api/skill');
+      let projectsData = await get('/api/project');
+      return {
+        about: aboutData.data,
+        curriculum: curriculumVitaeData.data,
+        skills: skillsData.data,
+        projects: projectsData.data
+      }
     }
   }    
 </script>
