@@ -3,7 +3,7 @@
         <section class="content no-paddig">
             <Box animation="fade-up" delay="200" icon="fa fa-2x fa-desktop" title="Project">
                 <div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" v-for='(p, index) in projects' v-bind:key='index'>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" v-for='(p, index) in value' v-bind:key='index'>
 						<div class="section-box-eleven" data-aos="zoom-out" data-aos-delay="400">
                             <figure>
 							    <div class="text-center">
@@ -20,7 +20,6 @@
     </div>    
 </template>
 <script>
-import {get} from '~/plugins/ApiHelper.js';
 import Box from '~/components/Home/Box.vue';
 
 export default {    
@@ -28,19 +27,10 @@ export default {
     components:{
         Box
     },
-    data(){
-        return{
-            projects: {}
+    props:{
+        value: {
+            type: Array
         }
-    },
-    created(){
-		get('/api/project').then(response => {
-			if(response.success){
-				this.projects = response.data;
-			}
-		}).catch(error => {
-			console.log(error);
-		});
-	}
+    }
 }
 </script>

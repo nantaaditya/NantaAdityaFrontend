@@ -4,7 +4,7 @@
 			<Box animation="flip-up" delay="200" icon="fa fa-user-circle fa-2x" title="About Me">
 				<h4 class="text-justify" style="padding: 20px" data-aos="fade-in" data-aos-easing="ease-in-sine" data-aos-delay="300">
 					<Break type="visible-lg visible-md" :count="2"></Break>
-                    <span v-html="about.description"></span>
+                    <span v-html="value.description"></span>
                 </h4>
 				<Break type="visible-lg visible-md" :count="2"></Break>
 			</Box>			
@@ -23,19 +23,10 @@ export default {
 		Box,
 		Break
 	},	
-    data(){
-        return{
-            about: {}
-        }
-    },
-	created(){
-		get('/api/about-me').then(response => {
-			if(response.success){
-				this.about = response.data;
-			}
-		}).catch(error => {
-			console.log(error);
-		});
+    props:{
+		value:{
+			type: Object
+		}
 	}
 }
 </script>

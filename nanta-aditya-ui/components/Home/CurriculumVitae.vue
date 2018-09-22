@@ -4,7 +4,7 @@
 			<Box animation="fade-up" delay="200" icon="fa fa-2x fa-graduation-cap" title="Curriculum Vitae">
 				<ul class="timeline">
                     <li data-aos="fade-right" data-aos-delay="400"><i class="fa fa-clock-o bg-gray"></i></li><br />
-                    <li v-for='(e, index) in educations' v-bind:key='index' data-aos="fade-right" data-aos-delay="400">
+                    <li v-for='(e, index) in value' v-bind:key='index' data-aos="fade-right" data-aos-delay="400">
                         <i class="fa fa-clock-o bg-green"></i>
                         <div class="timeline-item">
                             <h3 class="timeline-header text-blue">{{e.name}}</h3>
@@ -23,7 +23,6 @@
 	</div>
 </template>
 <script>
-import {get} from '~/plugins/ApiHelper.js';
 import Box from '~/components/Home/Box.vue';
 
 export default {
@@ -31,19 +30,10 @@ export default {
     components:{
         Box
     },
-    data(){
-        return{
-            educations: {}
+    props:{
+        value:{
+            type: Array
         }
-    },
-    created(){
-		get('/api/curriculum-vitae').then(response => {
-			if(response.success){
-				this.educations = response.data;
-			}
-		}).catch(error => {
-			console.log(error);
-		});
-	}
+    }
 }
 </script>
