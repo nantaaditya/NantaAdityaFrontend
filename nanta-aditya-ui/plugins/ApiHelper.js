@@ -24,6 +24,11 @@ const get = function (url) {
   });
 };
 
+const getPost = function (url) {
+  console.log(url);
+  return base.get(url);
+};
+
 const getBlog = function (url, c) {
   console.log(url);
   return base.get(url, {params:{
@@ -47,4 +52,4 @@ const post = function (url, request){
   });
 };
 
-export {get, getBlog, post};
+export {get, getBlog, getPost, post};
