@@ -29,7 +29,8 @@ export default {
                 { hid: 'og:image', property: 'og:image', content: 'localhost:3000/icon.png'},                                
             ],
             link: [
-                { rel: 'stylesheet', href:'/css/main.css'},       
+                { rel: 'stylesheet', href:'/css/main.css'},
+                { rel: 'stylesheet', href:'/css/custom-button-social.min.css'},       
             ]
         }
     },
