@@ -15,12 +15,12 @@ const base = axios.create({
 });
 
 
-const get = async function (url) {
+const get = function (url) {
   console.log(url);
-  return await base.get(url).then(response => {
+  return base.get(url).then(response => {
     return response.data;
   }).catch(error => {
-    console.log(error.response.data);
+    return error.response.data;
   });
 };
 
