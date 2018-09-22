@@ -3,7 +3,7 @@
       <div class="container">
           <section class="content-header">
               <Search></Search>
-              <Blog></Blog>
+              <Blog :value="blogs"></Blog>
           </section>
       </div>
     </div>
@@ -12,6 +12,7 @@
 <script>
 import Blog from '~/components/Blog/Blog.vue';
 import Search from '~/components/Blog/Search.vue';
+import {getBlog} from '~/plugins/ApiHelper.js';
 
 export default {
     layout: 'Blog',
@@ -35,6 +36,12 @@ export default {
     components:{
         Blog,
         Search
+    },
+    async asyncData(){
+        let blogsData = await getBlog('/api/blog', 'client');
+        return{
+            blogs: blogsData.data
+        }
     }
 }
 </script>
