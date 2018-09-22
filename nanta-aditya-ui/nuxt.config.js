@@ -86,7 +86,8 @@ module.exports = {
     { src: '~plugins/VueTimer.js', ssr: false },
     { src: '~/plugins/VueNotification.js' },
     { src: '~/plugins/ImageLazyLoad.js' },
-    { src: '~/plugins/SocialSharing.js'}    
+    { src: '~/plugins/SocialSharing.js'},
+    { src: '~/plugins/FacebookSdk.js', ssr: false}    
   ],
   router: {
     base: '/'
