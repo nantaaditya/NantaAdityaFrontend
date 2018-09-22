@@ -35,38 +35,29 @@
                         quote="Nanta Aditya Blog" 
                         :hashtags="b.keywords"
                         twitter-user="NantaAdiitya" 
-                        inline-template>
+                        inline-template
+                        network-tag="button">
                         <div class="btn-group">
-                            <network network="facebook">
-                                <button type="button" class="btn btn-facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </button>
+                            <network network="facebook" class="btn btn-facebook">                                
+                              <i class="fa fa-facebook"></i>                                
                             </network>
-                            <network network="googleplus">
-                                <button type="button" class="btn btn-google">
-                                    <i class="fa fa-google-plus"></i>
-                                </button>
+                            <network network="googleplus"  class="btn btn-google">                                
+                              <i class="fa fa-google-plus"></i>                                
                             </network>
-                            <network network="twitter">
-                                <button type="button" class="btn btn-twitter">
-                                    <i class="fa fa-twitter"></i>
-                                </button>
+                            <network network="twitter" class="btn btn-twitter">                                
+                              <i class="fa fa-twitter"></i>                                
                             </network>
-                            <network network="telegram">
-                                <button type="button" class="btn btn-telegram">
-                                    <i class="fa fa-telegram"></i>
-                                </button>
+                            <network network="telegram" class="btn btn-telegram">                                
+                              <i class="fa fa-telegram"></i>                                
                             </network>
-                            <network network="whatsapp">
-                                <button type="button" class="btn btn-whatsapp">
-                                    <i class="fa fa-whatsapp"></i>
-                                </button>
+                            <network network="whatsapp" class="btn btn-whatsapp">                                
+                              <i class="fa fa-whatsapp"></i>                                
                             </network>                    
                         </div>
                     </social-sharing>
-                    <a v-bind:href="b.url" class="btn btn-default pull-right">
+                    <nuxt-link :to="'post/'+b.titleId" class="btn btn-default pull-right">
                         <i class="fa fa-arrow-circle-o-right"></i>&nbsp;&nbsp;<b>Read More</b>
-                    </a>
+                    </nuxt-link>
 
                 </div>
             </div>          
@@ -122,153 +113,4 @@
   .box-blue {
     background: #03a9f4;
   }
-
-  .btn-telegram {
-    color: #fff;
-    background-color: #2AA5E0;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-telegram:focus,
-  .btn-telegram.focus {
-    color: #fff;
-    background-color: #1b88bc;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-telegram:hover {
-    color: #fff;
-    background-color: #1b88bc;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-telegram:active,
-  .btn-telegram.active,
-  .open>.dropdown-toggle.btn-telegram {
-    color: #fff;
-    background-color: #2AA5E0;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-telegram:active:hover,
-  .btn-telegram.active:hover,
-  .open>.dropdown-toggle.btn-telegram:hover,
-  .btn-telegram:active:focus,
-  .btn-telegram.active:focus,
-  .open>.dropdown-toggle.btn-telegram:focus,
-  .btn-telegram:active.focus,
-  .btn-telegram.active.focus,
-  .open>.dropdown-toggle.btn-telegram.focus {
-    color: #fff;
-    background-color: #1b88bc;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-telegram:active,
-  .btn-telegram.active,
-  .open>.dropdown-toggle.btn-telegram {
-    background-image: none
-  }
-
-  .btn-telegram.disabled,
-  .btn-telegram[disabled],
-  fieldset[disabled] .btn-telegram,
-  .btn-telegram.disabled:hover,
-  .btn-telegram[disabled]:hover,
-  fieldset[disabled] .btn-telegram:hover,
-  .btn-telegram.disabled:focus,
-  .btn-telegram[disabled]:focus,
-  fieldset[disabled] .btn-telegram:focus,
-  .btn-telegram.disabled.focus,
-  .btn-telegram[disabled].focus,
-  fieldset[disabled] .btn-telegram.focus,
-  .btn-telegram.disabled:active,
-  .btn-telegram[disabled]:active,
-  fieldset[disabled] .btn-telegram:active,
-  .btn-telegram.disabled.active,
-  .btn-telegram[disabled].active,
-  fieldset[disabled] .btn-telegram.active {
-    background-color: #1b88bc;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-telegram .badge {
-    color: #3b5998;
-    background-color: #fff
-  }
-
-  .btn-whatsapp {
-    color: #fff;
-    background-color: #25d366;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-whatsapp:focus,
-  .btn-whatsapp.focus {
-    color: #fff;
-    background-color: #59ac23;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-whatsapp:hover {
-    color: #fff;
-    background-color: #59ac23;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-whatsapp:active,
-  .btn-whatsapp.active,
-  .open>.dropdown-toggle.btn-telegram {
-    color: #fff;
-    background-color: #25d366;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-whatsapp:active:hover,
-  .btn-whatsapp.active:hover,
-  .open>.dropdown-toggle.btn-whatsapp:hover,
-  .btn-whatsapp:active:focus,
-  .btn-whatsapp.active:focus,
-  .open>.dropdown-toggle.btn-whatsapp:focus,
-  .btn-whatsapp:active.focus,
-  .btn-whatsapp.active.focus,
-  .open>.dropdown-toggle.btn-whatsapp.focus {
-    color: #fff;
-    background-color: #59ac23;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-whatsapp:active,
-  .btn-whatsapp.active,
-  .open>.dropdown-toggle.btn-whatsapp {
-    background-image: none
-  }
-
-  .btn-telegram.disabled,
-  .btn-whatsapp[disabled],
-  fieldset[disabled] .btn-whatsapp,
-  .btn-whatsapp.disabled:hover,
-  .btn-whatsapp[disabled]:hover,
-  fieldset[disabled] .btn-whatsapp:hover,
-  .btn-whatsapp.disabled:focus,
-  .btn-whatsapp[disabled]:focus,
-  fieldset[disabled] .btn-whatsapp:focus,
-  .btn-whatsapp.disabled.focus,
-  .btn-whatsapp[disabled].focus,
-  fieldset[disabled] .btn-whatsapp.focus,
-  .btn-whatsapp.disabled:active,
-  .btn-whatsapp[disabled]:active,
-  fieldset[disabled] .btn-whatsapp:active,
-  .btn-whatsapp.disabled.active,
-  .btn-whatsapp[disabled].active,
-  fieldset[disabled] .btn-whatsapp.active {
-    background-color: #59ac23;
-    border-color: rgba(0, 0, 0, 0.2)
-  }
-
-  .btn-whatsapp .badge {
-    color: #a3e974;
-    background-color: #fff
-  }
-
 </style>
