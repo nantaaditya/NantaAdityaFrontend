@@ -13,7 +13,7 @@
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 						<h4 class="text-blue text-center">MENU</h4>
 						<nav class="footer-menu">
-							<ul class="no-style text-center">
+							<ul class="no-style list-unstyled text-center">
 								<li><nuxt-link to="/">Home</nuxt-link></li><br/>
 						        <li><nuxt-link to="/blog">Blog</nuxt-link></li><br/>
 						        <li><nuxt-link to="/contact">Contact</nuxt-link></li>
