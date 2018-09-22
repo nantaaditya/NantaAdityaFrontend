@@ -2,18 +2,18 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" v-if="blogs.length<=0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" v-if="value.length<=0">
           <h3 class="text-center text-blue">Empty Post</h3>
         </div>
 
         <paginate
-            name="blogs"
+            name="value"
             tag="div"
-            :list="blogs"
+            :list="value"
             :per="9"            
         >
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" 
-            v-for="(b, index) in paginated('blogs')" v-bind:key='index'>
+            v-for="(b, index) in paginated('value')" v-bind:key='index'>
                       
             <div class="box" data-aos="fade-down" data-aos-delay="200">
                 <div class="box-header box-blue">
@@ -74,7 +74,7 @@
         </paginate>  
         
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <paginate-links for="blogs" 
+            <paginate-links for="value" 
                 :async="true"
                 :limit="5"
                 :classes="{
@@ -88,8 +88,7 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import {getBlog} from '~/plugins/ApiHelper.js';
+  import Vue from 'vue';  
   import VuePaginate from 'vue-paginate'
 
   Vue.use(VuePaginate);
@@ -97,20 +96,15 @@
   export default {
     name: "Blog",
     data() {
-      return {
-        blogs: [],
-        paginate: ['blogs']
+      return {        
+        paginate: ['value']
       }
     },
-    created(){
-		getBlog('/api/blog', 'client').then(response => {            
-			if(response.success){
-				this.blogs = response.data;
-			}
-		}).catch(error => {
-			console.log(error);
-		});
-    },
+    props:{
+      value:{
+        type: Array
+      }
+    }    
   }
 
 </script>
