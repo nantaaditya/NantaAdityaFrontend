@@ -8,7 +8,7 @@
 				</div>
 				<div class="widget-user-image">
 					<img class="img-responsive img-circle"
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoTSPfa412HXD6SIeXFsP7JpnxKCn7eHeEmJI6kwXOMVeghvJj"
+						src="/blog-avatar.png"
 						alt="User Avatar">
 				</div>
 				<div class="box-footer">

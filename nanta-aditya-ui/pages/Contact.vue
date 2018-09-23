@@ -1,11 +1,7 @@
 <template>
     <div class="content-wrapper">
 		<div class="container">
-            <section class="content-header">
-                <TitleText 
-                    attribute="text-blue text-center" text="Nanta Aditya's Contact"
-                    animation="fade-down" delay="200"
-                ></TitleText>
+            <section class="content-header">                
                 <Message></Message>
             </section>
 		</div>
@@ -13,7 +9,6 @@
 </template>
 
 <script>
-import TitleText from '~/components/TitleText.vue';
 import Message from '~/components/Contact/Message.vue';
 
 export default {
@@ -35,8 +30,7 @@ export default {
             ]
         }
     },
-    components:{
-        TitleText,
+    components:{        
         Message
     }
 }
