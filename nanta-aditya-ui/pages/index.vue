@@ -1,65 +1,80 @@
-<template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        nanta-aditya-ui
-      </h1>
-      <h2 class="subtitle">
-        Nanta Aditya's website
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+<template>      
+    <div class="content-wrapper">
+      <div class="container fill">
+        <!--CAROUSEL-->
+        <Carousel></Carousel>
+        <hr class="line" />
+        <!--PROFILE-->
+        <Profile :value="about"></Profile>
+        <!--DIVIDER-->
+        <Divider></Divider>
+        <!--CURRICULUM VITAE-->
+        <CurriculumVitae :value="curriculum"></CurriculumVitae>
+        <!--DIVIDER-->
+        <Divider></Divider>
+        <!--SKILL-->
+        <Skill :value="skills"></Skill>
+        <!--DIVIDER-->
+        <Divider></Divider>
+        <!--PROJECT-->
+        <Project :value="projects"></Project>
       </div>
-    </div>
-  </section>
+    </div>  
 </template>
 
-<script>
-import AppLogo from '~/components/AppLogo.vue'
+<script>  
+  import Carousel from '~/components/Home/Carousel.vue';
+  import CurriculumVitae from '~/components/Home/CurriculumVitae.vue';
+  import Divider from '~/components/Home/Divider.vue';  
+  import Profile from '~/components/Home/Profile.vue';
+  import Skill from '~/components/Home/Skill.vue';
+  import Project from '~/components/Home/Project.vue';
+  import axios from 'axios';
+  import {get} from '~/plugins/ApiHelper.js';
 
-export default {
-  components: {
-    AppLogo
-  }
-}
+  export default {    
+    layout: 'Home',
+    head:{
+      link: [
+        { rel: 'stylesheet', href:'/css/main.css'},       
+      ]
+    },
+    components:{
+      Carousel,
+      CurriculumVitae,
+      Divider,
+      Profile,
+      Skill,
+      Project
+    },
+    async asyncData(){
+      let aboutData = await get('/api/about-me');    
+      let curriculumVitaeData = await get('/api/curriculum-vitae');
+      let skillsData = await get('/api/skill');
+      let projectsData = await get('/api/project');
+      return {
+        about: aboutData.data,
+        curriculum: curriculumVitaeData.data,
+        skills: skillsData.data,
+        projects: projectsData.data
+      }
+    }
+  }    
 </script>
-
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+hr.line {
+  border-top: 4px double #3c8dbc;
   text-align: center;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+hr.line:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0);
+  color: #3c8dbc;
+  font-size: 18px;
 }
 </style>
-
