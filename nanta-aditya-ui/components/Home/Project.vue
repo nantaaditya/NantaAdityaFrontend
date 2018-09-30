@@ -10,7 +10,7 @@
 								    <a v-bind:href="p.url">{{p.name}}<i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 								</div>
 							</figure>
-							<img v-lazy="p.imageURL" class="img-responsive img-center center-block" />
+							<img v-lazy="p.imageURL" class="img-responsive img-center center-block" :alt="p.name"/>
 						</div>
 					</div>
 

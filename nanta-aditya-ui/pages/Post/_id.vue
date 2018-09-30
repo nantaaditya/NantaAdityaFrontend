@@ -42,7 +42,11 @@ export default {
             ],
             link: [
                 { rel: 'stylesheet', href:'/css/custom-button-social.min.css'},
-                { rel: 'stylesheet', href:'/css/main.css'},       
+                { rel: 'stylesheet', href:'/css/main.css'},
+                { rel: 'stylesheet', href:'/css/prism.css'}       
+            ],
+            script: [
+                {src: '/js/prism.js'}
             ]
         }
     },
