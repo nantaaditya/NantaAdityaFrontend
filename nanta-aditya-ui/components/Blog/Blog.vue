@@ -1,7 +1,19 @@
 <template>
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
+
       <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-lg-push-8 col-md-push-8">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="search" v-model="searchKeyword" autofocus="autofocus" value=""/>
+            <span class="input-group-addon">
+              <i class="fa fa-search"></i>
+            </span>
+          </div>  
+        </div>
+      </div>
+      <br/>
+      <div class="row">       
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" v-if="value.length<=0">
           <h3 class="text-center text-blue">Empty Post</h3>
         </div>
@@ -9,8 +21,9 @@
         <paginate
             name="value"
             tag="div"
-            :list="value"
-            :per="9"            
+            :list="blogs"
+            :per="9"
+            v-else            
         >
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" 
             v-for="(b, index) in paginated('value')" v-bind:key='index'>
@@ -18,12 +31,16 @@
             <div class="box" data-aos="fade-down" data-aos-delay="200">
                 <div class="box-header box-blue">
                     <img class="img-center img-responsive full-img" v-lazy="b.bannerURL" 
-                        data-aos="zoom-out" data-aos-delay="400" data-aos-duration="400"/>
+                        data-aos="zoom-out" data-aos-delay="400" data-aos-duration="400" :alt="b.title"/>
                 </div>
                 <div class="box-body">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h3 class="text-blue">{{b.title}}</h3>
+                        <h3 class="text-blue">
+                          <nuxt-link :to="'post/'+b.titleId">
+                          {{b.title}}
+                          </nuxt-link>
+                        </h3>
                     </div>                    
                 </div>
                 </div>
@@ -88,14 +105,22 @@
     name: "Blog",
     data() {
       return {        
-        paginate: ['value']
+        paginate: ['value'],
+        searchKeyword: ''
       }
     },
     props:{
       value:{
         type: Array
       }
-    }    
+    },
+    computed:{
+      blogs(){
+        return this.value.filter(blog => {
+          return blog.title.toLowerCase().includes(this.searchKeyword.toLowerCase())
+        })
+      }
+    }
   }
 
 </script>
