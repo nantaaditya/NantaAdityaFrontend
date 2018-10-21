@@ -53,33 +53,33 @@ module.exports = {
   manifest: {
     "name": "Nanta Aditya Web",
     "short_name": "NaN",
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#fff",
     "theme_color": "#47c4fd",
     "description": "Nanta Aditya\'s website, contains everything about my thought, my idea, my article, and everything that i want to write.",
     "icons": [{
-      "src": "/icon.png",
+      "src": "/icon48.png",
       "sizes": "48x48",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon72.png",
       "sizes": "72x72",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon96.png",
       "sizes": "96x96",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon144.png",
       "sizes": "144x144",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon168.png",
       "sizes": "168x168",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon512.png",
       "sizes": "512x512",
       "type": "image/png"
     }]
@@ -88,7 +88,7 @@ module.exports = {
     dev: true,
     runtimeCaching: [{      
       urlPattern: 'https://cdnjs.cloudflare.com/*',      
-      handler: 'cacheFirst',      
+      handler: 'networkFirst',      
       method: 'GET'
     },{
       urlPattern: '/css/*.css',
