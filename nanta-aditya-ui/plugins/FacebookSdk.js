@@ -7,10 +7,10 @@ vue_fb.install = function install(Vue, options) {
         if (d.getElementById(id)) {return}
         js = d.createElement(s);
         js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs)
-        console.log('setting fb sdk')
-    }(document, 'script', 'facebook-jssdk'))
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        console.log('setting fb sdk');
+    }(document, 'script', 'facebook-jssdk'));
 
     window.fbAsyncInit = function onSDKInit() {
         FB.init(options);
