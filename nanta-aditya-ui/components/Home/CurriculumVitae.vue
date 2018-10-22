@@ -3,7 +3,8 @@
 		<section class="content no-padding">
 			<Box animation="fade-up" delay="200" icon="fa fa-2x fa-graduation-cap" title="Curriculum Vitae">
 				<ul class="timeline">
-                    <li data-aos="fade-right" data-aos-delay="400"><i class="fa fa-clock-o bg-gray"></i></li><br />
+                    <li data-aos="fade-right" data-aos-delay="400"><i class="fa fa-clock-o bg-gray"></i></li>
+                    <li><br/></li>
                     <li v-for='(e, index) in value' v-bind:key='index' data-aos="fade-right" data-aos-delay="400">
                         <i class="fa fa-clock-o bg-green"></i>
                         <div class="timeline-item">

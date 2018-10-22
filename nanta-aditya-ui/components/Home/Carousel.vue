@@ -21,22 +21,22 @@
 				  <Break type="visible-lg visible-md" :count="2"></Break>
           
           <SocialMedia animate="flip-up" delay="700" 
-            to="mailto:personal@nantaaditya.com?Subject=Nanta%20Web" icon="fa fa-3x fa-envelope-o"></SocialMedia>
+            to="mailto:personal@nantaaditya.com?Subject=Nanta%20Web" icon="fa fa-3x fa-envelope-o" name="email"></SocialMedia>
 
           <SocialMedia animate="flip-up" delay="700" 
-            to="https://www.facebook.com/PramudityaAnantaNur" icon="fa fa-3x fa-facebook"></SocialMedia>
+            to="https://www.facebook.com/PramudityaAnantaNur" icon="fa fa-3x fa-facebook" name="facebook"></SocialMedia>
 
           <SocialMedia animate="flip-up" delay="700" 
-            to="https://twitter.com/PramudityaAN" icon="fa fa-3x fa-twitter"></SocialMedia>
+            to="https://twitter.com/PramudityaAN" icon="fa fa-3x fa-twitter" name="twitter"></SocialMedia>
 
           <SocialMedia animate="flip-up" delay="700" 
-            to="http://linkedin.com/in/pramuditya-anantanur-013859136" icon="fa fa-3x fa-linkedin"></SocialMedia>
+            to="http://linkedin.com/in/pramuditya-anantanur-013859136" icon="fa fa-3x fa-linkedin" name="linkedin"></SocialMedia>
 					
           <SocialMedia animate="flip-up" delay="700" 
-            to="http://github.com/nantaaditya" icon="fa fa-3x fa-github"></SocialMedia>
+            to="http://github.com/nantaaditya" icon="fa fa-3x fa-github" name="github"></SocialMedia>
 
           <SocialMedia animate="flip-up" delay="700" 
-            to="https://bitbucket.org/NantaAditya/" icon="fa fa-3x fa-bitbucket"></SocialMedia>
+            to="https://bitbucket.org/NantaAditya/" icon="fa fa-3x fa-bitbucket" name="bitbucket"></SocialMedia>
 
 				</div>
 			</div>
