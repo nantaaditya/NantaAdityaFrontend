@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.nantaaditya</groupId>
-  <artifactId>frontend</artifactId>
+  <artifactId>nanta-aditya-frontend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>Nanta Aditya</name>
   <description>Nanta Aditya Web</description>
