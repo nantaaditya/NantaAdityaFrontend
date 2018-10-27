@@ -14,9 +14,9 @@
 						<h4 class="text-blue text-center">MENU</h4>
 						<nav class="footer-menu">
 							<ul class="no-style list-unstyled text-center">
-								<li><nuxt-link to="/">Home</nuxt-link></li><br/>
-						        <li><nuxt-link to="/blog">Blog</nuxt-link></li><br/>
-						        <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+								<li style="display:block"><a href="/">Home</a></li>								
+						        <li style="display:block"><a href="/blog">Blog</a></li>								
+						        <li style="display:block"><a href="/contact">Contact</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -24,22 +24,22 @@
 						<h4 class="text-blue text-center">SOCIAL MEDIA</h4>
 						<div class="row">
 							<SocialMedia to="mailto:personal@nantaaditya.com?Subject=Nanta%20Web" 
-                                icon="fa fa-3x fa-envelope-o"></SocialMedia>
+                                icon="fa fa-3x fa-envelope-o" name="email"></SocialMedia>
 
                             <SocialMedia to="https://www.facebook.com/PramudityaAnantaNur" 
-                                icon="fa fa-3x fa-facebook"></SocialMedia>
+                                icon="fa fa-3x fa-facebook" name="facebook"></SocialMedia>
 
                             <SocialMedia to="https://twitter.com/PramudityaAN" 
-                                icon="fa fa-3x fa-twitter"></SocialMedia>
+                                icon="fa fa-3x fa-twitter" name="twitter"></SocialMedia>
 
                             <SocialMedia to="http://linkedin.com/in/pramuditya-anantanur-013859136" 
-                                icon="fa fa-3x fa-linkedin"></SocialMedia>
+                                icon="fa fa-3x fa-linkedin" name="linkedin"></SocialMedia>
 					
                             <SocialMedia to="http://github.com/nantaaditya" 
-                                icon="fa fa-3x fa-github"></SocialMedia>
+                                icon="fa fa-3x fa-github" name="github"></SocialMedia>
 
                             <SocialMedia to="https://bitbucket.org/NantaAditya/" 
-                                icon="fa fa-3x fa-bitbucket"></SocialMedia>
+                                icon="fa fa-3x fa-bitbucket" name="bitbucket"></SocialMedia>
 						</div>
 					</div>
 				</div>

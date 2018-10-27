@@ -13,22 +13,22 @@
 				</div>
 				<div class="box-footer">
 					<div class="row">
-                        <SocialMedia animate="zoom-in" delay="400" 
+                        <SocialMedia animate="zoom-in" delay="400" name="email"
                             to="mailto:personal@nantaaditya.com?Subject=Nanta%20Web" icon="fa fa-3x fa-envelope-o"></SocialMedia>
 
-                        <SocialMedia animate="zoom-in" delay="400" 
+                        <SocialMedia animate="zoom-in" delay="400" name="facebook"
                             to="https://www.facebook.com/PramudityaAnantaNur" icon="fa fa-3x fa-facebook"></SocialMedia>
 
-                        <SocialMedia animate="zoom-in" delay="400" 
+                        <SocialMedia animate="zoom-in" delay="400" name="twitter"
                             to="https://twitter.com/PramudityaAN" icon="fa fa-3x fa-twitter"></SocialMedia>
 
-                        <SocialMedia animate="zoom-in" delay="400" 
+                        <SocialMedia animate="zoom-in" delay="400" name="linkedin"
                             to="http://linkedin.com/in/pramuditya-anantanur-013859136" icon="fa fa-3x fa-linkedin"></SocialMedia>
                                     
-                        <SocialMedia animate="zoom-in" delay="400" 
+                        <SocialMedia animate="zoom-in" delay="400" name="github"
                             to="http://github.com/nantaaditya" icon="fa fa-3x fa-github"></SocialMedia>
 
-                        <SocialMedia animate="zoom-in" delay="400" 
+                        <SocialMedia animate="zoom-in" delay="400" name="bitbucket"
                             to="https://bitbucket.org/NantaAditya/" icon="fa fa-3x fa-bitbucket"></SocialMedia>
 					</div>
 					<div class="row">
@@ -40,16 +40,16 @@
                             <toast-container :toastConfig="config"></toast-container>
 					    	<form data-aos="zoom-in" data-aos-delay="700" @submit.prevent="sendMessage" method="post">
 								<div class="form-group">
-						   			<label class="label label-primary">Name</label> 
-                                    <input type="text" class="form-control" placeholder="name" v-model="request.name" required />
+						   			<label class="label label-primary" for="input-name">Name</label> 
+                                    <input type="text" class="form-control" id="input-name" placeholder="name" v-model="request.name" required />
 								</div>
 								<div class="form-group">
-								    <label class="label label-primary">Email</label> 
-                                    <input type="email" class="form-control" placeholder="email" v-model="request.email"/>
+								    <label class="label label-primary" for="input-email">Email</label> 
+                                    <input type="email" class="form-control" id="input-email" placeholder="email" v-model="request.email"/>
 								</div>
 								<div class="form-group">
-									<label class="label label-primary">Message</label>
-									<textarea class="form-control" rows="5" placeholder="message" v-model="request.message" required></textarea>
+									<label class="label label-primary" for="input-message">Message</label>
+									<textarea class="form-control" id="input-message" rows="5" placeholder="message" v-model="request.message" required></textarea>
 								</div>
 							    <div class="form-group">
                                     <div class="g-recaptcha" :data-sitekey="publicKey" id="captcha"></div>

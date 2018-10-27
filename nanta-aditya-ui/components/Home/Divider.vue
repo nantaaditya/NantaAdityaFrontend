@@ -1,6 +1,6 @@
 <template>
     <div class="container fill">
-        <section class="content no-padding" id="divider-background">
+        <section class="content no-padding divider-background">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
             </div>
@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <style>
-#divider-background {
+.divider-background {
   background: -moz-linear-gradient(top, rgba(33, 150, 243, 1) 0%, rgba(125, 185, 232, 0.79) 100%);
   background: -webkit-linear-gradient(top, rgba(33, 150, 243, 1) 0%, rgba(125, 185, 232, 0.79) 100%);
   background: linear-gradient(to bottom, rgba(33, 150, 243, 1) 0%, rgba(125, 185, 232, 0.79) 100%);

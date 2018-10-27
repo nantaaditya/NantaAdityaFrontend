@@ -3,8 +3,8 @@ import moment from 'moment';
 var querystring = require('querystring');
 
 // Axois configuration
-const base = axios.create({
-  baseURL: "http://localhost:8090",
+const base = axios.create({  
+  baseURL: "https://apps.nantaaditya.com/nanta-aditya-api",
   headers: { 
     'Accept': 'application/json'    
   },  

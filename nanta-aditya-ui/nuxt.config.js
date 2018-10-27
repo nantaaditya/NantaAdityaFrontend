@@ -17,7 +17,7 @@ module.exports = {
       { hid: 'og:type', property: 'og:type', content: 'website'},
       { hid: 'og:title', property: 'og:title', content: 'Nanta Aditya\'s website'},
       { hid: 'og:description', property: 'og:description', content: 'Nanta Aditya\'s website, contains everything about my thought, my idea, my article, and everything that i want to write.'},
-      { hid: 'og:image', property: 'og:image', content: 'localhost:3000/icon.png'},
+      { hid: 'og:image', property: 'og:image', content: 'https://static.nantaaditya.com/img/icon512.png'},
 
       { hid: 'language', name: 'language', content: 'id'},
       { hid: 'description',name: 'description', content: 'Nanta Aditya\'s website, contains everything about my thought, my idea, my article, and everything that i want to write.'},
@@ -29,22 +29,22 @@ module.exports = {
 
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'shortcut icon', type: 'image/png', href: '/icon.png'},
-      { rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'},
-      { rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'},
-      { rel: 'stylesheet', href:'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'},      
+      { rel: 'icon', type: 'image/x-icon', href: 'https://static.nantaaditya.com/img/favicon.ico' },
+      { rel: 'shortcut icon', type: 'image/png', href: 'https://static.nantaaditya.com/img/icon512.png'},
+      { rel: 'stylesheet', href:'/css/bootstrap.min.css'},
+      { rel: 'stylesheet', href:'/css/animate.min.css'},
+      { rel: 'stylesheet', href:'/css/font-awesome.min.css'},      
 
       { rel: 'stylesheet', href:'/css/admin-lte.min.css'},
       { rel: 'stylesheet', href:'/css/skin-blue-light.css'},
     ],
     script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' },
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'},
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js', async: true, defer: true},
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js', async: true, defer: true},
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/js/adminlte.min.js'},      
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js', async: true, defer: true}      
+      { src: '/js/jquery.min.js' },
+      { src: '/js/bootstrap.min.js'},
+      { src: '/js/jquery.slimscroll.min.js', async: true, defer: true},
+      { src: '/js/fastclick.min.js', async: true, defer: true},
+      { src: '/js/adminlte.min.js'},      
+      { src: '/js/modernizr.min.js', async: true, defer: true}      
     ],
     bodyAttrs: {
       class: 'hold-transition skin-blue-light layout-top-nav fixed'
@@ -52,34 +52,34 @@ module.exports = {
   },
   manifest: {
     "name": "Nanta Aditya Web",
-    "short_name": "NaN",
-    "start_url": ".",
+    "short_name": "Nanta",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#fff",
     "theme_color": "#47c4fd",
     "description": "Nanta Aditya\'s website, contains everything about my thought, my idea, my article, and everything that i want to write.",
     "icons": [{
-      "src": "/icon.png",
+      "src": "/icon48.png",
       "sizes": "48x48",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon72.png",
       "sizes": "72x72",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon96.png",
       "sizes": "96x96",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon144.png",
       "sizes": "144x144",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon168.png",
       "sizes": "168x168",
       "type": "image/png"
     }, {
-      "src": "/icon.png",
+      "src": "/icon512.png",
       "sizes": "512x512",
       "type": "image/png"
     }]
@@ -88,7 +88,7 @@ module.exports = {
     dev: true,
     runtimeCaching: [{      
       urlPattern: 'https://cdnjs.cloudflare.com/*',      
-      handler: 'cacheFirst',      
+      handler: 'networkFirst',      
       method: 'GET'
     },{
       urlPattern: '/css/*.css',
