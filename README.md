@@ -4,6 +4,22 @@
 ## About
 Nanta Aditya's website Frontend.
 
+## Setup
+
+ - Running nanta-aditya-frontend
+```
+   - cd /nanta-aditya-frontend
+   - mvn clean install
+   - mvn spring-boot:run
+```
+ - Running nanta-aditya-ui
+ ```
+   - cd /nanta-aditya-ui
+   - npm install
+   - for development purpose : npm run dev
+   - for production purpose : npm run build and then npm run start
+ ```
+
 ## Contact Me :
 
 [![Email](https://img.shields.io/badge/email-personal%40nantaaditya.com-green.svg?maxAge=3600)](mailto:personal@nantaaditya.com) 
