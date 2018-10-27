@@ -4,8 +4,9 @@
 
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-lg-push-8 col-md-push-8">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="search" v-model="searchKeyword" autofocus="autofocus" value=""/>
+          <label class="label label-primary" aria-label="search" for="input-search">Search</label>
+          <div class="input-group">            
+            <input type="text" class="form-control" id="input-search" placeholder="search" v-model="searchKeyword" autofocus="autofocus" value=""/>
             <span class="input-group-addon">
               <i class="fa fa-search"></i>
             </span>
@@ -37,9 +38,9 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h3 class="text-blue">
-                          <nuxt-link :to="'post/'+b.titleId">
+                          <a :href="'/post/'+b.titleId">
                           {{b.title}}
-                          </nuxt-link>
+                          </a>
                         </h3>
                     </div>                    
                 </div>
@@ -55,26 +56,26 @@
                         inline-template
                         network-tag="button">
                         <div class="btn-group">
-                            <network network="facebook" class="btn btn-facebook">                                
+                            <network network="facebook" class="btn btn-facebook" aria-label="facebook">                                
                               <i class="fa fa-facebook"></i>                                
                             </network>
-                            <network network="googleplus"  class="btn btn-google">                                
+                            <network network="googleplus" class="btn btn-google" aria-label="google plus">                                
                               <i class="fa fa-google-plus"></i>                                
                             </network>
-                            <network network="twitter" class="btn btn-twitter">                                
+                            <network network="twitter" class="btn btn-twitter" aria-label="twitter">                                
                               <i class="fa fa-twitter"></i>                                
                             </network>
-                            <network network="telegram" class="btn btn-telegram">                                
+                            <network network="telegram" class="btn btn-telegram" aria-label="telegram">                                
                               <i class="fa fa-telegram"></i>                                
                             </network>
-                            <network network="whatsapp" class="btn btn-whatsapp">                                
+                            <network network="whatsapp" class="btn btn-whatsapp" aria-label="whatsapp">                                
                               <i class="fa fa-whatsapp"></i>                                
                             </network>                    
                         </div>
                     </social-sharing>
-                    <nuxt-link :to="'post/'+b.titleId" class="btn btn-default pull-right">
+                    <a :href="'/post/'+b.titleId" class="btn btn-default pull-right">
                         <i class="fa fa-arrow-circle-o-right"></i>&nbsp;&nbsp;<b>Read More</b>
-                    </nuxt-link>
+                    </a>
 
                 </div>
             </div>          
