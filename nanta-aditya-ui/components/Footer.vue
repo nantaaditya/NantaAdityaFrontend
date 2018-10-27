@@ -14,11 +14,9 @@
 						<h4 class="text-blue text-center">MENU</h4>
 						<nav class="footer-menu">
 							<ul class="no-style list-unstyled text-center">
-								<li><a href="/">Home</a></li>
-								<li><br/></li>
-						        <li><a href="/blog">Blog</a></li>
-								<li><br/></li>
-						        <li><a href="/contact">Contact</a></li>
+								<li style="display:block"><a href="/">Home</a></li>								
+						        <li style="display:block"><a href="/blog">Blog</a></li>								
+						        <li style="display:block"><a href="/contact">Contact</a></li>
 							</ul>
 						</nav>
 					</div>
