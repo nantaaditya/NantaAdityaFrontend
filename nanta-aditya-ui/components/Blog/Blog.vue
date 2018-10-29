@@ -18,16 +18,9 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" v-if="value.length<=0">
           <h3 class="text-center text-blue">Empty Post</h3>
         </div>
-
-        <paginate
-            name="value"
-            tag="div"
-            :list="blogs"
-            :per="9"
-            v-else            
-        >
+        
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" 
-            v-for="(b, index) in paginated('value')" v-bind:key='index'>
+            v-for="(b, index) in paginatedData" v-bind:key='index' v-else>
                       
             <div class="box" data-aos="fade-down" data-aos-delay="200">
                 <div class="box-header box-blue">
@@ -79,17 +72,13 @@
 
                 </div>
             </div>          
-        </div>
-        </paginate>  
+        </div>        
         
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <paginate-links for="value" 
-                :async="true"
-                :limit="5"
-                :classes="{
-                    'ul': 'pagination'
-                }"
-                class="pull-right"></paginate-links>
+            <div class="btn-group pull-right">
+              <button type="button" class="btn btn-primary" @click='prevPage()' :disabled="pageNumber === 0">Previous</button>
+              <button type="button" class="btn btn-primary" @click='nextPage()' :disabled="pageNumber >= pageCount-1">Next</button>                      
+            </div>
         </div>
       </div>
     </div>
@@ -97,29 +86,41 @@
 </template>
 
 <script>
-  import Vue from 'vue';  
-  import VuePaginate from 'vue-paginate'
-
-  Vue.use(VuePaginate);
-
   export default {
     name: "Blog",
     data() {
       return {        
-        paginate: ['value'],
+        pageNumber: 0,
+        size: 9,        
         searchKeyword: ''
       }
-    },
-    props:{
-      value:{
-        type: Array
-      }
-    },
+    },    
     computed:{
-      blogs(){
+      value(){
+        return this.$store.getters.getBlogs;
+      },
+      pageCount(){
+        let l = this.value.length,
+            s = this.size;            
+        return Math.floor(l/s);
+      },
+      paginatedData(){
+        const start = this.pageNumber * this.size,
+              end = start + this.size;
+        return this.getBlogs.slice(start, end);      
+      },
+      getBlogs(){
         return this.value.filter(blog => {
           return blog.title.toLowerCase().includes(this.searchKeyword.toLowerCase())
         })
+      }
+    },
+    methods:{
+      nextpage(){
+        this.pageNumber++;
+      },
+      prevPage(){
+        this.pageNumber--;
       }
     }
   }

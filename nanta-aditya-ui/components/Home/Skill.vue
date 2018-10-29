@@ -3,7 +3,7 @@
         <section class="content no-paddig">
             <Box animation="fade-up" delay="200" icon="fa fa-2x fa-pie-chart" title="Skill">
                 <div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" v-for='(s, index) in value' v-bind:key='index'>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" v-for='(s, index) in skills' v-bind:key='index'>
 						<label class="label label-primary">{{s.name}}</label>
 						<div class="progress">
 						    <div class="progress-bar progress-bar-aqua"
@@ -23,17 +23,16 @@
     </div>    
 </template>
 <script>
-import Box from '~/components/Home/Box.vue';
+import { mapState } from 'vuex'
+import Box from '@/components/Home/Box.vue';
 
 export default {    
     name: "skill",
-    components:{
+    components: {
         Box
     },
-    props:{
-		value:{
-			type: Array
-		}
-	}
+    computed: mapState({
+		skills : 'skills'
+	})
 }
 </script>

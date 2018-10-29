@@ -54,9 +54,10 @@
 							    <div class="form-group">
                                     <div class="g-recaptcha" :data-sitekey="publicKey" id="captcha"></div>
 								</div>
-                                <button class="btn btn-success pull-right">
+                                <button class="btn btn-success pull-right" v-show="!isLoading">
 									<i class="fa fa-send"></i> Send
 								</button>
+                                <p class="text-right" v-show="isLoading"><i class="fa fa-cog fa-spin"></i></p>
 							</form>
 						</div>
 					</div>
@@ -90,18 +91,11 @@ export default {
                 email: '',
                 message: '',
                 captchaResponse: ''
-            },
-            profile: 'development',
-            publicKey: ''
+            },            
+            isLoading: false,
+            publicKey: process.env.isProd ? process.env.prodKey : process.env.devKey
         }
-    },
-    created(){
-        if (this.profile == "production") {
-			this.publicKey = "6LeO4UYUAAAAALeGqo6BbKWPkMkAVDmVltXJgsXj";
-		} else if (this.profile == "development") {
-			this.publicKey = "6Len4UYUAAAAAGj6vm-Wgnrt5Q_78rVBMQu14JrL";
-		}
-    },
+    },    
     computed: {
         config: function () {
             return { bodyOutputType: 'TrustedHtml' }
@@ -110,15 +104,18 @@ export default {
     methods:{
         sendMessage: function(event){
             this.request.captchaResponse = grecaptcha.getResponse();
+            this.isLoading = true;
             post('/api/message', this.request)
                 .then(response => {                    
                     this.showMessage(response);
                     this.request = {};
                     event.target.reset();                    
                     grecaptcha.reset();
+                    this.isLoading = false;    
     		    }).catch(error => {
-			        console.log(error);
-		        });
+                    console.log(error);
+                    this.isLoading = false;    
+                });            
         },
         showMessage: function(response){            
             if(response != null && (response.errors == undefined || response.errors == null)){

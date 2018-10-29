@@ -5,7 +5,7 @@
 				<ul class="timeline">
                     <li data-aos="fade-right" data-aos-delay="400"><i class="fa fa-clock-o bg-gray"></i></li>
                     <li><br/></li>
-                    <li v-for='(e, index) in value' v-bind:key='index' data-aos="fade-right" data-aos-delay="400">
+                    <li v-for='(e, index) in educations' v-bind:key='index' data-aos="fade-right" data-aos-delay="400">
                         <i class="fa fa-clock-o bg-green"></i>
                         <div class="timeline-item">
                             <h3 class="timeline-header text-blue">{{e.name}}</h3>
@@ -24,17 +24,16 @@
 	</div>
 </template>
 <script>
-import Box from '~/components/Home/Box.vue';
+import { mapState } from 'vuex'
+import Box from '@/components/Home/Box.vue';
 
 export default {
     name: "Education",
     components:{
         Box
     },
-    props:{
-        value:{
-            type: Array
-        }
-    }
+    computed: mapState({
+		educations : 'educations'
+	})	
 }
 </script>
