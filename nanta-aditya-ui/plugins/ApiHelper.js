@@ -4,9 +4,10 @@ var querystring = require('querystring');
 
 // Axois configuration
 const base = axios.create({  
-  baseURL: "https://apps.nantaaditya.com/nanta-aditya-api",
+  baseURL: process.env.isProd ? process.env.prodApi : process.env.devApi,
   headers: { 
-    'Accept': 'application/json'    
+    'Accept': 'application/json',
+    'Cache-Control': 'no-cache'    
   },  
   credentials: false,  
   params: {
@@ -15,9 +16,8 @@ const base = axios.create({
 });
 
 
-const get = function (url) {
-  console.log(url);
-  return base.get(url).then(response => {
+const get = function (url) {  
+  return base.get(url).then(response => {    
     return response.data;
   }).catch(error => {
     return error.response.data;
