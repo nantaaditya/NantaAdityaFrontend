@@ -13,7 +13,9 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nanta Aditya&apos;s Website' },
       { name:"theme-color", content:"#47c4fd"},
 
-      { hid: 'og:url', property: 'og:url', content: 'http://www.nantaaditya.com'},
+      { hid: 'fb:app_id', property: 'fb:app_id', content: '2186546758291018'},
+      { hid: 'og:title', property: 'og:title', content: 'Nanta Aditya\'s Web'},
+      { hid: 'og:url', property: 'og:url', content: 'https://www.nantaaditya.com'},
       { hid: 'og:type', property: 'og:type', content: 'website'},
       { hid: 'og:title', property: 'og:title', content: 'Nanta Aditya\'s website'},
       { hid: 'og:description', property: 'og:description', content: 'Nanta Aditya\'s website, contains everything about my thought, my idea, my article, and everything that i want to write.'},
@@ -84,6 +86,13 @@ module.exports = {
       "type": "image/png"
     }]
   },
+  env: {
+    isProd: true,
+    devApi: 'localhost:8080/nanta-aditya-api',
+    prodApi: 'https://apps.nantaaditya.com/nanta-aditya-api',
+    devKey: '6Len4UYUAAAAAGj6vm-Wgnrt5Q_78rVBMQu14JrL',
+    prodKey: '6LeO4UYUAAAAALeGqo6BbKWPkMkAVDmVltXJgsXj'
+  },
   workbox: {
     dev: true,
     runtimeCaching: [{      
@@ -96,7 +105,7 @@ module.exports = {
       options: {
         cache:{
           name: 'css-cache',
-          maxEnteries: 10,
+          maxEntries: 10,
           maxAgeSeconds: 3600
         }
       }
@@ -106,7 +115,7 @@ module.exports = {
       options: {
         cache:{
           name: 'js-cache',
-          maxEnteries: 10,
+          maxEntries: 10,
           maxAgeSeconds: 3600
         }
       }
@@ -116,7 +125,7 @@ module.exports = {
       options: {
         cache:{
           name: 'nuxt-js-cache',
-          maxEnteries: 10,
+          maxEntries: 10,
           maxAgeSeconds: 3600
         }
       }
