@@ -3,7 +3,7 @@
       <div class="container">
           <section class="content-header">
               <Search></Search>
-              <Blog :value="blogs"></Blog>
+              <Blog></Blog>
           </section>
       </div>
     </div>
@@ -22,11 +22,11 @@ export default {
             meta: [
                 { hid: 'description', name: 'description', content: 'Nanta Aditya\'s Blog | This is where you can read my post, especially about art, technology, and random things.' },
                 { hid: 'keywords', name: 'keywords', content: 'Nanta Aditya, Nanta Aditya\'s Website, Nanta Aditya\'s Blog, Spring Boot, Code Igniter, Java, PHP, Angular, Vue, PostgreSQL, MySQL'},      
-                { hid: 'og:url', property: 'og:url', content: 'http://www.nantaaditya.com/blog'},
+                { hid: 'og:url', property: 'og:url', content: 'https://www.nantaaditya.com/blog'},
                 { hid: 'og:type', property: 'og:type', content: 'website'},
-                { hid: 'og:title', property: 'og:title', content: 'Nanta Aditya\'s website | Blog'},
+                { hid: 'og:title', property: 'og:title', content: 'Nanta Aditya\'s Blog | Blog'},
                 { hid: 'og:description', property: 'og:description', content: 'Nanta Aditya\'s Blog | This is where you can read all random thing in my mind, especially about art, technology, and random things.'},
-                { hid: 'og:image', property: 'og:image', content: 'localhost:3000/icon.png'},                                
+                { hid: 'og:image', property: 'og:image', content: 'https://static.nantaaditya.com/img/nanta-aditya-fb-icon.png'},                                
             ],
             link: [
                 { rel: 'stylesheet', href:'/css/main.css'},
@@ -38,11 +38,9 @@ export default {
         Blog,
         Search
     },
-    async asyncData(){
-        let blogsData = await getBlog('/api/blog', 'client');
-        return{
-            blogs: blogsData.data
-        }
+    async asyncData({store}){
+        let blogs = await getBlog('/api/blog', 'client');        
+        store.commit('SET_BLOGS', blogs.data);
     }
 }
 </script>

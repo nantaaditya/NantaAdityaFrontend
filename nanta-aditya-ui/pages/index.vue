@@ -5,32 +5,31 @@
         <Carousel></Carousel>
         <hr class="line" />
         <!--PROFILE-->
-        <Profile :value="about"></Profile>
+        <Profile></Profile>
         <!--DIVIDER-->
         <Divider></Divider>
         <!--CURRICULUM VITAE-->
-        <CurriculumVitae :value="curriculum"></CurriculumVitae>
+        <CurriculumVitae></CurriculumVitae>
         <!--DIVIDER-->
         <Divider></Divider>
         <!--SKILL-->
-        <Skill :value="skills"></Skill>
+        <Skill></Skill>
         <!--DIVIDER-->
         <Divider></Divider>
         <!--PROJECT-->
-        <Project :value="projects"></Project>
+        <Project></Project>
       </div>
     </div>  
 </template>
 
 <script>  
-  import Carousel from '~/components/Home/Carousel.vue';
-  import CurriculumVitae from '~/components/Home/CurriculumVitae.vue';
-  import Divider from '~/components/Home/Divider.vue';  
-  import Profile from '~/components/Home/Profile.vue';
-  import Skill from '~/components/Home/Skill.vue';
-  import Project from '~/components/Home/Project.vue';
-  import axios from 'axios';
-  import {get} from '~/plugins/ApiHelper.js';
+  import Carousel from '@/components/Home/Carousel.vue';
+  import CurriculumVitae from '@/components/Home/CurriculumVitae.vue';
+  import Divider from '@/components/Home/Divider.vue';  
+  import Profile from '@/components/Home/Profile.vue';
+  import Skill from '@/components/Home/Skill.vue';
+  import Project from '@/components/Home/Project.vue';  
+  import {get} from '@/plugins/ApiHelper.js';
 
   export default {    
     layout: 'Home',
@@ -47,17 +46,15 @@
       Skill,
       Project
     },
-    async asyncData(){
-      let aboutData = await get('/api/about-me');    
-      let curriculumVitaeData = await get('/api/curriculum-vitae');
-      let skillsData = await get('/api/skill');
-      let projectsData = await get('/api/project');
-      return {
-        about: aboutData.data,
-        curriculum: curriculumVitaeData.data,
-        skills: skillsData.data,
-        projects: projectsData.data
-      }
+    async asyncData({store}){
+      let about = await get('/api/about-me');    
+      let educations = await get('/api/curriculum-vitae');
+      let skills = await get('/api/skill');
+      let projects = await get('/api/project');      
+      store.commit('SET_ABOUT', about.data);
+      store.commit('SET_EDUCATION', educations.data);
+      store.commit('SET_SKILL', skills.data);
+      store.commit('SET_PROJECT', projects.data);
     }
   }    
 </script>

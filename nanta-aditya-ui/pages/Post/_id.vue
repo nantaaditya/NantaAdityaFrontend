@@ -36,9 +36,9 @@ export default {
                 { hid: 'keywords', name: 'keywords', content: 'Nanta Aditya, Nanta Aditya\'s Website, Nanta Aditya\'s Blog, '+this.post.keywords},      
                 { hid: 'og:url', property: 'og:url', content: this.post.url},
                 { hid: 'og:type', property: 'og:type', content: 'website'},
-                { hid: 'og:title', property: 'og:title', content: 'Nanta Aditya\'s website | Blog - '+this.post.title },
+                { hid: 'og:title', property: 'og:title', content: 'Nanta Aditya\'s Web | Blog - '+this.post.title },
                 { hid: 'og:description', property: 'og:description', content: 'Nanta Aditya\'s Blog | '+this.post.description},
-                { hid: 'og:image', property: 'og:image', content: 'localhost:3000/icon.png'},                                
+                { hid: 'og:image', property: 'og:image', content: this.post.bannerURL},                                
             ],
             link: [
                 { rel: 'stylesheet', href:'/css/custom-button-social.min.css'},
