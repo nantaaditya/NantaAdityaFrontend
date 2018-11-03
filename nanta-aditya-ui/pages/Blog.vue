@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import Blog from '~/components/Blog/Blog.vue';
-import Search from '~/components/Blog/Search.vue';
-import {getBlog} from '~/plugins/ApiHelper.js';
+import Blog from '@/components/Blog/Blog.vue';
+import Search from '@/components/Blog/Search.vue';
+import {getBlog} from '@/plugins/ApiHelper.js';
 
 export default {
     layout: 'Blog',

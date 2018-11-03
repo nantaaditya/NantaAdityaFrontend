@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import Title from '~/components/Post/Title.vue';
-import Content from '~/components/Post/Content.vue';
-import {getPost} from '~/plugins/ApiHelper.js';
+import Title from '@/components/Post/Title.vue';
+import Content from '@/components/Post/Content.vue';
+import {getPost} from '@/plugins/ApiHelper.js';
 import Vue from 'vue';
 
 export default {

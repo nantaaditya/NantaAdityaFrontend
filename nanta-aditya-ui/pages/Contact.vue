@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Message from '~/components/Contact/Message.vue';
+import Message from '@/components/Contact/Message.vue';
 
 export default {
     layout: 'Contact',

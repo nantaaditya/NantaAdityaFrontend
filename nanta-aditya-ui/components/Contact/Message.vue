@@ -67,8 +67,8 @@
 	</div>        
 </template>
 <script>
-import {post} from '~/plugins/ApiHelper.js'
-import SocialMedia from '~/components/SocialMedia.vue';
+import {post} from '@/plugins/ApiHelper.js'
+import SocialMedia from '@/components/SocialMedia.vue';
 
 export default {
     head(){

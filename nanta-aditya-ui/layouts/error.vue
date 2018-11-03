@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import SocialMedia from '~/components/SocialMedia.vue';
+import SocialMedia from '@/components/SocialMedia.vue';
 
 export default {
   props: ['error'],

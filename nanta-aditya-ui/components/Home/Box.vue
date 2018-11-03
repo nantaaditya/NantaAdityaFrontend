@@ -26,7 +26,7 @@
 	</div>
 </template>
 <script>
-import Break from '~/components/Break.vue';
+import Break from '@/components/Break.vue';
 
 export default {
     name: "Box",

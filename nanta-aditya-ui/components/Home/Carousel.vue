@@ -45,11 +45,11 @@
 </template>
 
 <script>
-import Break from '~/components/Break.vue';
-import SocialMedia from '~/components/SocialMedia.vue';
+import Break from '@/components/Break.vue';
+import SocialMedia from '@/components/SocialMedia.vue';
 
 import moment from 'moment';
-import { getZeroPad } from '~/plugins/DateFilter.js';
+import { getZeroPad } from '@/plugins/DateFilter.js';
 
 export default {
   name: "Carousel",
