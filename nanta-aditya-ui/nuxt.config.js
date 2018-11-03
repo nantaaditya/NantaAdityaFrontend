@@ -33,10 +33,9 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'https://static.nantaaditya.com/img/favicon.ico' },
       { rel: 'shortcut icon', type: 'image/png', href: 'https://static.nantaaditya.com/img/icon512.png'},
-      { rel: 'stylesheet', href:'/css/bootstrap.min.css'},
-      { rel: 'stylesheet', href:'/css/animate.min.css'},
-      { rel: 'stylesheet', href:'/css/font-awesome.min.css'},      
-
+      { rel: 'stylesheet', href:'/css/bootstrap.min.css', async: true, defer: true},
+      { rel: 'stylesheet', href:'/css/animate.min.css', async: true, defer: true},
+      { rel: 'stylesheet', href:'/css/font-awesome.min.css', async: true, defer: true},      
       { rel: 'stylesheet', href:'/css/admin-lte.min.css'},
       { rel: 'stylesheet', href:'/css/skin-blue-light.css'},
     ],
@@ -46,7 +45,7 @@ module.exports = {
       { src: '/js/jquery.slimscroll.min.js', async: true, defer: true},
       { src: '/js/fastclick.min.js', async: true, defer: true},
       { src: '/js/adminlte.min.js'},      
-      { src: '/js/modernizr.min.js', async: true, defer: true}      
+      { src: '/js/modernizr.min.js', async: true, defer: true},      
     ],
     bodyAttrs: {
       class: 'hold-transition skin-blue-light layout-top-nav fixed'
@@ -60,6 +59,8 @@ module.exports = {
     "background_color": "#fff",
     "theme_color": "#47c4fd",
     "description": "Nanta Aditya\'s website, contains everything about my thought, my idea, my article, and everything that i want to write.",
+    "gcm_sender_id": "482941778795",
+    "gcm_sender_id_comment": "Do not change the GCM Sender ID",
     "icons": [{
       "src": "/icon48.png",
       "sizes": "48x48",
@@ -86,9 +87,56 @@ module.exports = {
       "type": "image/png"
     }]
   },
+  oneSignal: {
+    init: {
+      appId: '55fc1e18-aae5-492b-a4b1-fa8c33368d02',
+      allowLocalhostAsSecureOrigin: true,
+      autoRegister: false,      
+      notifyButton: {
+        enable: true,
+        prenotify: true,
+        colors: {
+          'circle.background': '#03a9f4',
+          'circle.foreground': 'white',
+          'badge.background': 'rgb(84,110,123)',
+          'badge.foreground': 'white',
+          'badge.bordercolor': 'white',
+          'pulse.color': 'white',
+          'dialog.button.background.hovering': 'rgb(77, 101, 113)',
+          'dialog.button.background.active': 'rgb(70, 92, 103)',
+          'dialog.button.background': 'rgb(84,110,123)',
+          'dialog.button.foreground': 'white'
+        },
+        text: {
+          'tip.state.unsubscribed': 'Subscribe here for latest article',
+          'tip.state.subscribed': "Thank you for subscribing!",
+          'tip.state.blocked': "Sorry, you've blocked notifications",
+          'message.prenotify': 'Subscribe here for latest article',
+          'message.action.subscribed': "Thanks you for subscribing!",
+          'message.action.resubscribed': "Thanks you for subscribing!",
+          'message.action.unsubscribed': "Sorry, you've blocked notifications",
+          'dialog.main.title': 'Nanta Aditya',
+          'dialog.main.button.subscribe': 'ALLOW',
+          'dialog.main.button.unsubscribe': 'NO THANKS',
+          'dialog.blocked.title': 'Please, Unblock Notifications',
+          'dialog.blocked.message': "Follow these instructions to allow notifications:"
+        }
+      },
+      promptOptions: {        
+        actionMessage: "I'd like to show you notifications for the latest article.",        
+        acceptButtonText: "ALLOW",        
+        cancelButtonText: "NO THANKS"
+      },
+      welcomeNotification: {
+        "title": "Nanta Aditya",
+        "message": "Thanks you for subscribing!",
+        // "url": "" /* Leave commented for the notification to not open a window on Chrome and Firefox (on Safari, it opens to your webpage) */
+      }
+    }
+  },
   env: {
-    isProd: true,
-    devApi: 'localhost:8080/nanta-aditya-api',
+    isProd: false,
+    devApi: 'http://localhost:8080/nanta-aditya-api',
     prodApi: 'https://apps.nantaaditya.com/nanta-aditya-api',
     devKey: '6Len4UYUAAAAAGj6vm-Wgnrt5Q_78rVBMQu14JrL',
     prodKey: '6LeO4UYUAAAAALeGqo6BbKWPkMkAVDmVltXJgsXj'
@@ -160,6 +208,7 @@ module.exports = {
      */
     '@nuxtjs/moment',
     '@nuxtjs/axios',
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa',    
     ['@nuxtjs/google-analytics', {id: 'UA-114339618-1'}]
   ],
